@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Garinga</title>
+
+<link rel="icon" type="image/png" href="icono.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        background: #f2f5f9;
+        font-family: 'Roboto', Arial, sans-serif;
+        color: #333;
+    }
+
+    /* BARRA ROJA (HEADER) CON ANIMACIÓN PRONUNCIADA Y TÍTULO MEJORADO */
+    header {
+        background: #e51e1e;
+        padding: 25px;
+        text-align: center;
+        color: white;
+        font-size: 32px;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        transition: all 0.4s ease-in-out;
+        cursor: default;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: skewX(-30deg);
+        transition: all 0.7s ease;
+    }
+
+    header:hover {
+        background: #ff3f3f;
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 25px rgba(255, 50, 50, 0.7);
+    }
+
+    header:hover::before {
+        left: 100%;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+        max-width: 900px;
+        background: white;
+        margin: 40px auto;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* TÍTULO PRINCIPAL */
+    h1 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        color: #000; /* Título principal en negro */
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+        margin-bottom: 30px;
+    }
+
+    /* TARJETA DE INTRODUCCIÓN */
+    .introduction-card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 25px 35px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        width: 80%;
+        max-width: 600px;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        text-align: left;
+        color: #000; /* Subtítulo en negro */
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    p {
+        text-align: left;
+        line-height: 1.6;
+        font-size: 1.1em;
+        color: #000; /* Párrafo en negro */
+        margin-bottom: 0;
+    }
+    
+    /* IMAGEN DEL STREAMER CON ANIMACIÓN DE ZOOM */
+    .streamer-photo {
+        max-width: 60%;
+        height: auto;
+        border-radius: 50%; /* Circular */
+        margin: 0 auto;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    }
+
+    .streamer-photo:hover {
+        transform: scale(1.15); /* Efecto zoom más notorio */
+        box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 30px rgba(30, 136, 229, 0.7);
+    }
+
+    /* GRUPO DE BOTONES */
+    .button-group {
+        display: flex;
+        gap: 20px; /* Espacio entre los botones */
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    /* ESTILOS BASE Y ANIMACIÓN PARA AMBOS BOTONES */
+    a.button {
+        padding: 15px 25px;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animación "salto" */
+        display: inline-block;
+    }
+
+    /* ESTILO ESPECÍFICO: BOTÓN AZUL (VER STREAM) */
+    .primary-button {
+        background: #1e88e5;
+        box-shadow: 0 5px 15px rgba(30, 136, 229, 0.4);
+    }
+    .primary-button:hover {
+        background: #007bff;
+        transform: translateY(-8px) scale(1.1);
+        box-shadow: 0 12px 25px rgba(0, 123, 255, 0.6), 0 0 30px rgba(0, 123, 255, 0.4);
+    }
+
+    /* ESTILO ESPECÍFICO: BOTÓN VERDE (PC DE GARINGA) */
+    .second-button {
+        background: #28a745; 
+        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+    }
+    .second-button:hover {
+        background: #218838;
+        transform: translateY(-8px) scale(1.1);
+        box-shadow: 0 12px 25px rgba(40, 167, 69, 0.6), 0 0 30px rgba(40, 167, 69, 0.4);
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    Garinga Streamer
+</header>
+
+<div class="container">
+
+    <h1>¿Quién es Garinga?</h1>
+
+    <div class="introduction-card">
+        <h2>Introducción</h2>
+        <p>
+            Garinga es un streamer de exito que se dedica a jugar fortnite mientras lo stremea, tiene 41 años y es de argentina
+        </p>
+    </div>
+    
+    <img class="streamer-photo" src="img/garinga.png" alt="Foto ilustrativa">
+    
+    <div class="button-group">
+        <a class="button primary-button" href="https://www.twitch.tv/garinga1984" target="_blank">Ver stream</a>
+
+        <a class="button second-button" href="https://pcracing.pro/pc-racing-sigma-d5-pc-gaming-intel-core-i9-14900kf-64gb-2tb-ssd-rtx-4070-super-windows-11-pro-refrigeracion-liquida-lcd%f0%9f%93%ba%e2%9c%85/" target="_blank">PC de Garinga</a>
+    </div>
+
+</div>
+</body>
+</html>
